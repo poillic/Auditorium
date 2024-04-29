@@ -9,10 +9,15 @@ public class MusicBox : MonoBehaviour
     public Color _offColor;
     public SpriteRenderer[] _bars;
 
-   
+    [Header( "Volume" )]
+    [Tooltip( "Volume gain per particle" )]
+    public float volumeIncrement = 0.02f;
+    [Tooltip( "Volume lost per second" )]
+    public float volumeDecay = 0.1f;
+
     void Start()
     {
-        
+        _audioSource.volume = 0f;
     }
 
     // Update is called once per frame
@@ -23,15 +28,7 @@ public class MusicBox : MonoBehaviour
         for ( int i = 0; i < _bars.Length; i++ )
         {
             float seuil = (float)i / (float)_bars.Length;
-            /*
-             * 0 / 5 = 0
-             * 1 / 5 = 0.2
-             * 2 / 5 = 0.4
-             * 3 / 5 = 0.6
-             * 4 / 5 = 0.8
-             * 5 / 5 = 1
-             * 
-             */
+
             if ( _audioSource.volume > seuil )
             {
                 // on allume la barre
@@ -42,6 +39,16 @@ public class MusicBox : MonoBehaviour
                 // On éteinds la barre
                 _bars[ i ].color = _offColor;
             }
+        }
+
+        _audioSource.volume -= volumeDecay * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D( Collider2D collision )
+    {
+        if( collision.CompareTag("Particle") )
+        {
+            _audioSource.volume += volumeIncrement;
         }
     }
 }

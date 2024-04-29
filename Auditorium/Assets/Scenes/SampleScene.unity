@@ -136,7 +136,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -262,6 +262,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &649809422 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6979722843443910676, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1027690452 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6608232728186797751, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &1433568853 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
@@ -312,7 +322,7 @@ PrefabInstance:
       objectReference: {fileID: 1509507446}
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.size
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.data[0]
@@ -321,19 +331,19 @@ PrefabInstance:
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1652189715}
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.data[2]
       value: 
-      objectReference: {fileID: 1652189715}
+      objectReference: {fileID: 1906014137}
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 649809422}
     - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: _bars.Array.data[4]
       value: 
-      objectReference: {fileID: 1906014137}
+      objectReference: {fileID: 1027690452}
     - target: {fileID: 863081328759354083, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: m_Name
       value: MusicBox
@@ -350,9 +360,21 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4968533076659968725, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968533076659968725, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968533076659968725, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 07feffd84e0df4fa0aa651d89c30c8de, type: 3}
     - target: {fileID: 8949023624710291365, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 20.11
       objectReference: {fileID: 0}
     - target: {fileID: 8949023624710291365, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: m_LocalPosition.y
