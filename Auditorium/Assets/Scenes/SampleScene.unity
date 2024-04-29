@@ -262,6 +262,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1433568853 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1509507446 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4968533076659968725, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1652189715 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5735726481583838013, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1906014137 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2372173168430014358, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+  m_PrefabInstance: {fileID: 5760089613490910911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5760089613490910911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,16 +290,64 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _onColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _onColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _onColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _onColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1509507446}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.data[0]
+      value: 
+      objectReference: {fileID: 1433568853}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.data[2]
+      value: 
+      objectReference: {fileID: 1652189715}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 128842001982601036, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: _bars.Array.data[4]
+      value: 
+      objectReference: {fileID: 1906014137}
     - target: {fileID: 863081328759354083, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: m_Name
       value: MusicBox
       objectReference: {fileID: 0}
-    - target: {fileID: 2774123775847641543, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.61
+    - target: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4022821288126393773, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
-      propertyPath: m_Radius
+    - target: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8949023624710291365, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
