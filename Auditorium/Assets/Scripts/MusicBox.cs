@@ -14,6 +14,10 @@ public class MusicBox : MonoBehaviour
     public float volumeIncrement = 0.02f;
     [Tooltip( "Volume lost per second" )]
     public float volumeDecay = 0.1f;
+    [Tooltip( "Time beforde decrementing volume" )]
+    public float decayInterval = 1f;
+
+    private float _chrono = 0f;
 
     void Start()
     {
@@ -41,7 +45,15 @@ public class MusicBox : MonoBehaviour
             }
         }
 
-        _audioSource.volume -= volumeDecay * Time.deltaTime;
+        if( _chrono >= decayInterval )
+        {
+            _audioSource.volume -= volumeDecay * Time.deltaTime;
+        }
+        else
+        {
+            _chrono += Time.deltaTime;
+        }
+
     }
 
     private void OnTriggerEnter2D( Collider2D collision )
@@ -49,6 +61,7 @@ public class MusicBox : MonoBehaviour
         if( collision.CompareTag("Particle") )
         {
             _audioSource.volume += volumeIncrement;
+            _chrono = 0f;
         }
     }
 }
