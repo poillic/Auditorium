@@ -8,6 +8,12 @@ public class MouseManager : MonoBehaviour
 
     public Texture2D centerIcon;
     public Texture2D resizeIcon;
+
+    [Header("Radius Parameters")]
+    public float minRadius = 1f;
+    public float maxRadius = 10f;
+    //public Vector2 radiusLimit = new Vector2( 1f, 10f );
+    
     private Ray _ray;
     private bool _isClicked;
     private GameObject _objectToMove = null;
@@ -34,14 +40,35 @@ public class MouseManager : MonoBehaviour
         if( _isClicked && _objectToResize != null )
         {
             //Calcul de la distance entre le pointer et le centre de l'objet avec Vector2.Distance
-            //_objectToResize.Radius = La distance
+            float radius = Vector2.Distance( _objectToResize.transform.position, _worldPosition );
+            _objectToResize.Radius = Mathf.Clamp( radius , minRadius, maxRadius );
+            //_objectToResize.Radius = Mathf.Clamp( radius , radiusLimit.x, radiusLimit.y );
         }
 
         if( !_isClicked )
         {
             _objectToMove = null;
+            _objectToResize = null;
         }
     }
+
+    /*public float Clamp( float value, float min, float max )
+    {
+        if( value < min )
+        {
+            return min;
+        }
+        else if( value > max )
+        {
+            return max;
+        }
+        else
+        {
+            return value;
+        }
+
+        //return Mathf.Max( Mathf.Min( value, max ), min );
+    }*/
 
     public void PointerMove( InputAction.CallbackContext context )
     {
@@ -72,7 +99,7 @@ public class MouseManager : MonoBehaviour
                 // J'ai touché le cercle exterieur
                 Debug.Log( "OUTTER" );
                 Cursor.SetCursor( resizeIcon, new Vector2( 256, 256 ), CursorMode.Auto );
-                //_objectToResize = GetComponent
+                _objectToResize = hit.collider.GetComponent<CircleShape>();
             }
         }
         else
