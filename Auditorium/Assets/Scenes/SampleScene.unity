@@ -218,7 +218,19 @@ MonoBehaviour:
     m_ActionId: 4c6080ff-adaf-4984-b78b-561501a35a48
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 773058110}
+        m_TargetAssemblyTypeName: MouseManager, Assembly-CSharp
+        m_MethodName: PointerMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 295b7937-2d79-48cd-96ba-2a32d0f41fad
     m_ActionName: Player/Position[/Mouse/position]
   - m_PersistentCalls:
@@ -389,6 +401,50 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6979722843443910676, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
   m_PrefabInstance: {fileID: 5760089613490910911}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &773058109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773058111}
+  - component: {fileID: 773058110}
+  m_Layer: 0
+  m_Name: MouseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &773058110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773058109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d3096b8212dc745836160a8dfa1ce2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &773058111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773058109}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.801736, y: -0.8041582, z: -10.043751}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &990580156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -745,3 +801,4 @@ SceneRoots:
   - {fileID: 990580156}
   - {fileID: 387314731}
   - {fileID: 1943268249}
+  - {fileID: 773058111}
