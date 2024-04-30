@@ -214,10 +214,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 531b6f17e97d9d64bb5613b4f857f1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
-  _onColor: {r: 0, g: 0, b: 0, a: 0}
+  _audioSource: {fileID: 4968533076659968725}
+  _onColor: {r: 1, g: 1, b: 1, a: 1}
   _offColor: {r: 0, g: 0, b: 0, a: 1}
-  _bars: []
+  _bars:
+  - {fileID: 2825854369424187493}
+  - {fileID: 5735726481583838013}
+  - {fileID: 2372173168430014358}
+  - {fileID: 6979722843443910676}
+  - {fileID: 6608232728186797751}
+  volumeIncrement: 0.02
+  volumeDecay: 0.1
+  decayInterval: 1
 --- !u!1 &1444382862594863328
 GameObject:
   m_ObjectHideFlags: 0

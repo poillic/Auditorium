@@ -44,7 +44,7 @@ public class MusicBox : MonoBehaviour
                 _bars[ i ].color = _offColor;
             }
         }
-
+        
         if( _chrono >= decayInterval )
         {
             _audioSource.volume -= volumeDecay * Time.deltaTime;
@@ -53,7 +53,6 @@ public class MusicBox : MonoBehaviour
         {
             _chrono += Time.deltaTime;
         }
-
     }
 
     private void OnTriggerEnter2D( Collider2D collision )
