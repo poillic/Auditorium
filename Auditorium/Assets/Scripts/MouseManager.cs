@@ -7,9 +7,12 @@ public class MouseManager : MonoBehaviour
 {
 
     public Texture2D centerIcon;
+    public Texture2D resizeIcon;
     private Ray _ray;
     private bool _isClicked;
-    private GameObject _zone = null;
+    private GameObject _objectToMove = null;
+    private CircleShape _objectToResize = null;
+    private Vector3 _worldPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +25,21 @@ public class MouseManager : MonoBehaviour
     {
         Debug.Log( _isClicked );
 
-        if( _isClicked && _zone != null )
+        if( _isClicked && _objectToMove != null )
         {
-            Debug.Log( $"Je dois déplacer {_zone.name}" );
+            Debug.Log( $"Je dois déplacer {_objectToMove.name}" );
+            _objectToMove.transform.position = _worldPosition;
+        }
+
+        if( _isClicked && _objectToResize != null )
+        {
+            //Calcul de la distance entre le pointer et le centre de l'objet avec Vector2.Distance
+            //_objectToResize.Radius = La distance
+        }
+
+        if( !_isClicked )
+        {
+            _objectToMove = null;
         }
     }
 
@@ -39,8 +54,8 @@ public class MouseManager : MonoBehaviour
 
         //Converti un point de l'écran dans le world
         //!\ Attention au Z avec cette méthode
-        //Camera.main.ScreenToWorldPoint()
-
+        _worldPosition = Camera.main.ScreenToWorldPoint( pointerPosition );
+        _worldPosition.z = 0;
         // Si j'ai touché quelque chose
         if( hit.collider != null )
         {
@@ -50,19 +65,20 @@ public class MouseManager : MonoBehaviour
                 Cursor.SetCursor( centerIcon, new Vector2( 256, 256 ), CursorMode.Auto );
                 // J'ai touché la fleche
 
-                _zone = hit.collider.transform.parent.gameObject;
+                _objectToMove = hit.collider.transform.parent.gameObject;
             }
             else if( hit.collider.CompareTag( "OutterZone" ) )
             {
                 // J'ai touché le cercle exterieur
                 Debug.Log( "OUTTER" );
+                Cursor.SetCursor( resizeIcon, new Vector2( 256, 256 ), CursorMode.Auto );
+                //_objectToResize = GetComponent
             }
         }
         else
         {
             //Notre pointer survole rien, on remet le curseur à sa forme par défaut
             Cursor.SetCursor( null, Vector2.zero, CursorMode.Auto );
-            _zone = null;
         }
     }
 
