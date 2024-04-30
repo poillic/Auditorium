@@ -12,14 +12,17 @@ public class MouseManager : MonoBehaviour
     [Header("Radius Parameters")]
     public float minRadius = 1f;
     public float maxRadius = 10f;
+    public float magnitudeMinimum = 4f;
+    public float radiusRatio = 4f;
     //public Vector2 radiusLimit = new Vector2( 1f, 10f );
     
     private Ray _ray;
     private bool _isClicked;
     private GameObject _objectToMove = null;
     private CircleShape _objectToResize = null;
+    private AreaEffector2D _objectEffector = null;
     private Vector3 _worldPosition;
-
+    private bool _isInteracting = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +38,7 @@ public class MouseManager : MonoBehaviour
         {
             Debug.Log( $"Je dois déplacer {_objectToMove.name}" );
             _objectToMove.transform.position = _worldPosition;
+            _isInteracting = true;
         }
 
         if( _isClicked && _objectToResize != null )
@@ -43,12 +47,15 @@ public class MouseManager : MonoBehaviour
             float radius = Vector2.Distance( _objectToResize.transform.position, _worldPosition );
             _objectToResize.Radius = Mathf.Clamp( radius , minRadius, maxRadius );
             //_objectToResize.Radius = Mathf.Clamp( radius , radiusLimit.x, radiusLimit.y );
+            _objectEffector.forceMagnitude = magnitudeMinimum - ( radiusRatio ) + radiusRatio * _objectToResize.Radius;
+            _isInteracting = true;
         }
 
         if( !_isClicked )
         {
             _objectToMove = null;
             _objectToResize = null;
+            _isInteracting = false;
         }
     }
 
@@ -86,6 +93,11 @@ public class MouseManager : MonoBehaviour
         // Si j'ai touché quelque chose
         if( hit.collider != null )
         {
+            if( _isInteracting )
+            {
+                return;
+            }
+
             if( hit.collider.CompareTag("CenterZone") )
             {
                 Debug.Log( "CENTER" );
@@ -100,6 +112,7 @@ public class MouseManager : MonoBehaviour
                 Debug.Log( "OUTTER" );
                 Cursor.SetCursor( resizeIcon, new Vector2( 256, 256 ), CursorMode.Auto );
                 _objectToResize = hit.collider.GetComponent<CircleShape>();
+                _objectEffector = hit.collider.GetComponent<AreaEffector2D>();
             }
         }
         else
