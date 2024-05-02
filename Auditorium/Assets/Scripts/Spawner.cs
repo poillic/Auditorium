@@ -23,7 +23,18 @@ public class Spawner : MonoBehaviour
         if( _chrono >= spawnInterval )
         {
             Vector2 spawnPosition = (Vector2) transform.position + Random.insideUnitCircle * _spawnRadius;
-            GameObject particle = Instantiate( _particlePrefab, spawnPosition, Quaternion.identity );
+            
+            //On récupère la particule
+            GameObject particle = ObjectPool.Get();
+            //GameObject particle = Instantiate( _particlePrefab, spawnPosition, Quaternion.identity );
+
+            //On active la particle
+            particle.SetActive( true );
+
+            //On téléporte la particule
+            particle.transform.position = spawnPosition;
+
+            //On initialise la particule
             particle.GetComponent<Rigidbody2D>().velocity = transform.right * 10f;
             _chrono = 0f;
         }
