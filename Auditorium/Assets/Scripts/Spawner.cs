@@ -28,6 +28,11 @@ public class Spawner : MonoBehaviour
             GameObject particle = ObjectPool.Get();
             //GameObject particle = Instantiate( _particlePrefab, spawnPosition, Quaternion.identity );
 
+            if( particle == null )
+            {
+                return;
+            }
+
             //On active la particle
             particle.SetActive( true );
 

@@ -12,10 +12,20 @@ public class GameManager : MonoBehaviour
 
     private bool _allMaxVolume = true;
 
+    private void OnEnable()
+    {
+        Debug.Log( "Je suis activé !" );
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log( "Je suis desactivé !" );
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] boxes = GameObject.FindGameObjectsWithTag( "OutterZone" );
+        GameObject[] boxes = GameObject.FindGameObjectsWithTag( "MusicBox" );
 
         // En C# les tableaux ont une longueur fixe !
         _musicBoxes = new AudioSource[ boxes.Length ];

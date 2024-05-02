@@ -32,11 +32,8 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log( _isClicked );
-
         if( _isClicked && _objectToMove != null )
         {
-            Debug.Log( MyScript.Get().name );
             Debug.Log( $"Je dois déplacer {_objectToMove.name}" );
             _objectToMove.transform.position = _worldPosition;
             _isInteracting = true;

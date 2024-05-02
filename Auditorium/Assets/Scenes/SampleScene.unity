@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particlePrefab: {fileID: 4296090515563775526, guid: bbfd415de640dbc419a37ed5e3a1db21, type: 3}
   _spawnRadius: 1
-  spawnInterval: 0.02
+  spawnInterval: 0.1
 --- !u!4 &495753754
 Transform:
   m_ObjectHideFlags: 0
@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 495753752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.4056096, w: 0.9140464}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7.05, y: 2.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d628fd675193f0a42b1e904582fb8e92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  qtyToCreate: 10
+  qtyToCreate: 300
   prefabToCreate: {fileID: 4296090515563775526, guid: bbfd415de640dbc419a37ed5e3a1db21, type: 3}
 --- !u!4 &548683932
 Transform:
@@ -1447,6 +1447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicBox (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 863081328759354083, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_TagString
+      value: MusicBox
+      objectReference: {fileID: 0}
     - target: {fileID: 4968533076659968725, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: Loop
       value: 1
@@ -1668,6 +1672,10 @@ PrefabInstance:
       objectReference: {fileID: 1027690452}
     - target: {fileID: 863081328759354083, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
       propertyPath: m_Name
+      value: MusicBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 863081328759354083, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}
+      propertyPath: m_TagString
       value: MusicBox
       objectReference: {fileID: 0}
     - target: {fileID: 2825854369424187493, guid: f6d459cf94ad70c4b8cb48d3fe68339c, type: 3}

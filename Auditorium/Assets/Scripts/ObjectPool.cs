@@ -15,7 +15,7 @@ public class ObjectPool : MonoBehaviour
 
         for ( int i = 0; i < qtyToCreate; i++ )
         {
-            pool[ i ] = Instantiate( prefabToCreate );
+            pool[ i ] = Instantiate( prefabToCreate, transform );
             pool[ i ].SetActive( false );
         }
     }
@@ -24,7 +24,7 @@ public class ObjectPool : MonoBehaviour
     {
         foreach ( GameObject item in pool )
         {
-            if( item.activeSelf )
+            if( !item.activeSelf )
             {
                 return item;
             }
