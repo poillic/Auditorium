@@ -4,25 +4,31 @@ using UnityEngine;
 
 public class MyScript : MonoBehaviour
 {
-    float age = 0;
-    // Start is called before the first frame update
-    void Start()
+    public int _qtyToPool = 10;
+    public GameObject _itemToPool;
+    private static GameObject[] _pool;
+
+    private void Start()
     {
-        
+        _pool = new GameObject[ _qtyToPool ];
+
+        for ( int i = 0; i < _qtyToPool; i++ )
+        {
+            _pool[ i ] = Instantiate( _itemToPool );
+            _pool[ i ].SetActive( false );
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public static GameObject Get()
     {
-        age = age + 1;
-        age += 1;
-        age++; // + 1
+        foreach ( GameObject item in _pool )
+        {
+            if( item.activeSelf )
+            {
+                return item;
+            }
+        }
 
-        age = age - 1;
-        age -= 1;
-        age--;
-
-        age += 0.2f;
-        age -= 17f;
+        return null;
     }
 }

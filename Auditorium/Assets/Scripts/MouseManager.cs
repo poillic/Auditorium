@@ -36,6 +36,7 @@ public class MouseManager : MonoBehaviour
 
         if( _isClicked && _objectToMove != null )
         {
+            Debug.Log( MyScript.Get().name );
             Debug.Log( $"Je dois déplacer {_objectToMove.name}" );
             _objectToMove.transform.position = _worldPosition;
             _isInteracting = true;
