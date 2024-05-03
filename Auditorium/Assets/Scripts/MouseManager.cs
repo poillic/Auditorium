@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.EventSystems;
 public class MouseManager : MonoBehaviour
 {
 
@@ -77,6 +77,8 @@ public class MouseManager : MonoBehaviour
 
     public void PointerMove( InputAction.CallbackContext context )
     {
+        if ( EventSystem.current.IsPointerOverGameObject() ) return;
+
         //Position en pixel du pointer dans l'écran
         Vector2 pointerPosition = context.ReadValue<Vector2>();
 
